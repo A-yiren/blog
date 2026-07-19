@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老年人数字鸿沟与养老方式选择 | 缪毅翔</title>
+<meta name="description" content="统计建模参赛论文 · 基于 CHARLS 2018-2020 数据的实证研究 · 第一作者">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../../" class="nav-logo">缪毅翔</a>
+    <ul class="nav-links">
+      <li><a href="../../">首页</a></li>
+      <li><a href="../">作品</a></li>
+      <li><a href="../../about/">关于</a></li>
+      <li><a href="../../#contact">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="detail-hero">
+  <div class="container">
+    <div class="detail-tags">
+      <span class="project-tag tag-blue">第一作者</span>
+      <span class="project-tag tag-soft">统计建模</span>
+      <span class="project-tag">实证研究</span>
+      <span class="project-tag">CHARLS</span>
+    </div>
+    <h1 class="detail-title">老年人数字鸿沟与养老方式选择</h1>
+    <p class="detail-subtitle">基于 CHARLS 2018-2020 数据的实证研究 · 3.8 万样本 · Logistic 回归 · 第一作者</p>
+    <div class="detail-meta">
+      <span>📅 <strong>时间：</strong> 2026.04 - 2026.05</span>
+      <span>📊 <strong>赛事：</strong> 统计建模大赛</span>
+      <span>👤 <strong>角色：</strong> 第一作者（缪毅翔）/ 第二作者（赵玉林）/ 第三作者（罗尘）</span>
+      <span>📁 <strong>数据：</strong> 中国健康与养老追踪调查（CHARLS）</span>
+    </div>
+  </div>
+</header>
+
+<section class="detail-content">
+  <div class="container">
+    <div class="detail-layout">
+
+      <main>
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">📌</span> 研究背景</h3>
+          <p>截至 2023 年底，我国 <strong>60 岁及以上网民规模已突破 1.25 亿</strong>，但老年群体在数字技术接入、使用和能力方面与年轻群体差距依然显著，"数字鸿沟"问题日益突出。</p>
+          <p>数字鸿沟不仅影响日常生活（出行、就医、购物），更影响<strong>养老方式选择</strong>。本研究用 CHARLS 大样本数据，量化这种影响，并探讨家庭支持的缓冲作用。</p>
+          <div class="callout">
+            <span class="callout-title">🎯 三个研究问题</span>
+            Q1：老年群体的数字鸿沟现状如何？<br>
+            Q2：教育、养老金、年龄、性别、户口与数字技术使用有何关联？<br>
+            Q3：数字鸿沟是否影响养老方式选择？
+          </div>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">📊</span> 核心数据</h3>
+          <div class="metric-row">
+            <div class="metric">
+              <div class="metric-value">3.8<span style="font-size:14px">万</span></div>
+              <div class="metric-label">总样本量</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">3.1%</div>
+              <div class="metric-label">2018 老人用手机比例</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">20.5%</div>
+              <div class="metric-label">2020 老人用手机比例</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">31.7%</div>
+              <div class="metric-label">大专学历使用率</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">17.0%</div>
+              <div class="metric-label">小学学历使用率</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">91.4%</div>
+              <div class="metric-label">想在家离世</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">78.3%</div>
+              <div class="metric-label">实际在家离世</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">770</div>
+              <div class="metric-label">死者临终信息</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">🛠</span> 方法 &amp; 数据</h3>
+          <ul>
+            <li><strong>数据源：</strong>CHARLS 2018 (wave4) + 2020 (wave5)，北京大学国家发展研究院主持</li>
+            <li><strong>样本：</strong>2018 年 18,297 人 / 2020 年 19,362 人（45 岁以上中老年人）</li>
+            <li><strong>方法：</strong>二元 Logistic 回归（处理"用/不用"二元选择）</li>
+            <li><strong>因变量：</strong>手机使用 (da005)、在家去世 (exb006)</li>
+            <li><strong>自变量：</strong>教育 (ba010, 0-8 级)、养老金 (fn002)、年龄、性别、户口、子女数</li>
+          </ul>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">💡</span> 五大主要发现</h3>
+          <table class="compare-table">
+            <thead>
+              <tr><th>发现</th><th>结论</th><th>证据</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>数字鸿沟仍突出</td><td>80%+ 老人未用手机</td><td>2020 年 19.5% 使用率</td></tr>
+              <tr><td>教育是关键因素</td><td>大专 ≈ 2× 小学</td><td>31.7% vs 17.0%</td></tr>
+              <tr><td>养老金呈负向</td><td>有养老金者用得更少</td><td>p=0.056 (边缘显著)</td></tr>
+              <tr><td>性别差异存在</td><td>2020 女性用得更多</td><td>p=0.032 (显著)</td></tr>
+              <tr><td>家庭支持是关键</td><td>子女越多越可能在家去世</td><td>p=0.021 (显著)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">📐</span> 三个回归模型结果</h3>
+          <table class="compare-table">
+            <thead>
+              <tr><th>模型</th><th>样本</th><th>核心发现</th><th>Pseudo R²</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>模型 A：2018 手机使用 ~ 人口特征</td><td>n=2,518</td><td>性别、年龄边缘显著</td><td>0.0096</td></tr>
+              <tr><td>模型 B：2018 + 养老金变量</td><td>n=2,512</td><td>养老金负向（p=0.056）</td><td>0.0155</td></tr>
+              <tr><td>模型 C：2020 手机使用</td><td>n=978</td><td>教育边缘显著 / 性别显著</td><td>0.0068</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">🎯</span> 我解决的难点</h3>
+          <ul>
+            <li><strong>两期数据口径不一致：</strong>2018 用 da005_1_，2020 用 da005，编码相似但实际问卷题目不同 → 不能简单横向对比，重点看各期内部关联</li>
+            <li><strong>教育数据覆盖率低：</strong>2018 只有 14%、2020 只有 6% → 限制了回归样本量，需要谨慎解读</li>
+            <li><strong>养老金混在效应：</strong>看似"有养老金 → 用得少"，实际是"有养老金的人年龄大" → 引入年龄控制变量分解</li>
+            <li><strong>临终样本小：</strong>只有 601 个有完整回归数据的死者 → 结论需谨慎，但子女数 + 性别两个变量都达到显著水平</li>
+          </ul>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">📜</span> 政策启示</h3>
+          <ul>
+            <li><strong>数字素养培训：</strong>重点关注低学历、农村老年人，教手机打车、挂号、看新闻</li>
+            <li><strong>数字产品适老化：</strong>界面简洁、操作便捷，降低使用门槛</li>
+            <li><strong>家庭支持体系：</strong>税收优惠、照护假制度，让子女有时间教父母用手机</li>
+          </ul>
+          <div class="callout callout-success">
+            <span class="callout-title">✅ 核心结论</span>
+            <strong>数字鸿沟通过两条路径影响老人生前生活质量：</strong><br>
+            ① 低数字素养限制老人用手机打车、网上挂号、和子孙视频等日常能力；<br>
+            ② 数字技能差异加剧信息不对称，影响老人获取养老服务资源。<br>
+            <strong>子女支持是化解数字鸿沟负面影响的关键缓冲变量。</strong>
+          </div>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">⚠️</span> 研究局限（诚实面对）</h3>
+          <ul>
+            <li>2018 / 2020 手机使用变量口径可能不同，影响纵向比较</li>
+            <li>教育变量覆盖率在两期数据中均较低（约 14% / 6%）</li>
+            <li>2020 年 CHARLS 缺少养老金模块数据</li>
+            <li>去世地点回归样本量有限（n=601），统计效力有限</li>
+          </ul>
+        </div>
+
+        <div class="cta-row">
+          <a href="../" class="btn">返回作品</a>
+          <a href="../../#contact" class="btn btn-ghost">联系合作</a>
+        </div>
+      </main>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card featured-card">
+          <h3>项目速览</h3>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">赛事</span>
+            <span class="sidebar-data-value">统计建模</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">作者排序</span>
+            <span class="sidebar-data-value">第一作者</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">数据源</span>
+            <span class="sidebar-data-value">CHARLS</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">方法</span>
+            <span class="sidebar-data-value">Logistic 回归</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>手机使用率</h3>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">2018 (n=18,297)</span>
+            <span class="sidebar-data-value accent">3.14%</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">2020 (n=19,362)</span>
+            <span class="sidebar-data-value accent">20.48%</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">增长率</span>
+            <span class="sidebar-data-value accent">≈ 6.5×</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>教育 vs 使用率 (2020)</h3>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">大专</span>
+            <span class="sidebar-data-value accent">31.75%</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">高中/职高</span>
+            <span class="sidebar-data-value accent">22.22%</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">初中</span>
+            <span class="sidebar-data-value accent">20.10%</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">小学</span>
+            <span class="sidebar-data-value accent">16.86%</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">文盲</span>
+            <span class="sidebar-data-value accent">19.25%</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>临终数据 (n=770)</h3>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">想在家离世</span>
+            <span class="sidebar-data-value accent">91.4%</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">实际在家离世</span>
+            <span class="sidebar-data-value accent">78.3%</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">男性死者占比</span>
+            <span class="sidebar-data-value accent">73.3%</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>技术栈</h3>
+          <div class="tag-stack">
+            <span>Python</span>
+            <span>Logistic 回归</span>
+            <span>CHARLS</span>
+            <span>Stata</span>
+            <span>实证研究</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 缪毅翔 · All rights reserved</div>
+      <div>建于锦州 · 跑在阿里云</div>
+      <div><a href="mailto:3446482129@qq.com" style="margin-right:12px;">邮件</a><a href="#">GitHub</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

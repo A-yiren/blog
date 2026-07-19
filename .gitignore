@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Editor backup
+*.bak
+*.bak-
+*.tmp
+*.orig
+
+# Local dev
+.cache/
+*.log

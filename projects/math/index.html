@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大型展销会临时工排班优化 | 缪毅翔</title>
+<meta name="description" content="东北三省数学建模竞赛省一等奖 · 整数线性规划 + 三步法最优性证明">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../../" class="nav-logo">缪毅翔</a>
+    <ul class="nav-links">
+      <li><a href="../../">首页</a></li>
+      <li><a href="../">作品</a></li>
+      <li><a href="../../about/">关于</a></li>
+      <li><a href="../../#contact">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="detail-hero">
+  <div class="container">
+    <div class="detail-tags">
+      <span class="project-tag tag-gold">🏆 省一等奖</span>
+      <span class="project-tag">数学建模</span>
+      <span class="project-tag">运筹优化</span>
+      <span class="project-tag">整数规划</span>
+    </div>
+    <h1 class="detail-title">大型展销会临时工排班优化</h1>
+    <p class="detail-subtitle">东北三省数学建模竞赛 B 题 · 10 天 10 组 11 时段排班最优解，<strong>最少 400 人 / 3198 工日</strong>，三步法数学证明锁死最优性</p>
+    <div class="detail-meta">
+      <span>📅 <strong>时间：</strong> 2025</span>
+      <span>🏆 <strong>奖项：</strong> 东北三省数学建模 · 省一等奖</span>
+      <span>👤 <strong>角色：</strong> 参赛队员 1（组长）/ 全部建模与代码</span>
+      <span>👥 <strong>团队：</strong> 缪毅翔 + 赵玉林 / 指导教师：冯海艳</span>
+    </div>
+  </div>
+</header>
+
+<section class="detail-content">
+  <div class="container">
+    <div class="detail-layout">
+
+      <main>
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">📌</span> 项目背景</h3>
+          <p>某大型展销会持续 <strong>10 天</strong>，设 <strong>10 个展区</strong>，每日营业时间 <strong>8:00 - 19:00</strong>，共 <strong>11 个时段</strong>。每个时段、每个组的人力需求不同，临时工管理面临三个核心问题：</p>
+          <ul>
+            <li><strong>招多少人？</strong>招多了浪费，招少了崩盘</li>
+            <li><strong>怎么排？</strong>每人每天 2 个 4 小时班次，中间至少间隔 6 小时；10 天内工作 8 天、休息 2 天</li>
+            <li><strong>能不能证明这是最优？</strong>不只是"找到一个方案"，而是"证明这就是最好的方案"</li>
+          </ul>
+          <p>题目分三问：<mark>Q1 固定组别</mark> → <mark>Q2 允许换组</mark> → <mark>Q3 弹性排班</mark>，层层递进。</p>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">📊</span> 三个问题 · 三个最优解</h3>
+          <table class="compare-table">
+            <thead>
+              <tr><th>问题</th><th>约束</th><th>最优工人数</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Q1 固定组别</td><td>工人不换组，按 8 个 4 小时班次配对</td><td>417 人</td></tr>
+              <tr><td>Q2 允许换组</td><td>每天可换组，班次可不连续</td><td>406 人</td></tr>
+              <tr><td>Q2 班次间隔约束</td><td>增加"班次间休息 1 小时"约束</td><td>506 人</td></tr>
+              <tr><td>Q3 弹性排班</td><td>块间隔 6 小时 + 严格证明</td><td><strong>400 人（下界）</strong></td></tr>
+            </tbody>
+          </table>
+          <div class="callout callout-success">
+            <span class="callout-title">🏆 核心结论</span>
+            在最宽松的 Q3 条件下，我们<strong>严格证明 400 人是该问题的理论下界</strong>，并验证 400 人方案可行。
+          </div>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">🧠</span> 三步法数学证明（Q3 核心）</h3>
+          <p>这一部分是论文最有价值的部分——不仅"找到"400 人这个解，而是<strong>从三个维度证明"400 不能再少了"</strong>：</p>
+          <table class="compare-table">
+            <thead>
+              <tr><th>步骤</th><th>模型</th><th>规模</th><th>作用</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Step 1：下界证明</td><td>聚合 ILP 模型</td><td>6,000 变量 + 1,100 约束</td><td>证明总工日 ≥ 3198（用 CBC 求解器）</td></tr>
+              <tr><td>Step 2：人数上限</td><td>理论推导</td><td>—</td><td>199 人不可能（199×8 = 1592 &lt; 需求）</td></tr>
+              <tr><td>Step 3：可行性验证</td><td>Per-Worker 紧凑模型</td><td>16.2 万变量（45 种 8 天工作模式）</td><td>证明 400 人方案能满足所有时段需求</td></tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <span class="callout-title">💡 为什么是 400？</span>
+            10 天 11 时段共 110 个时段-组组合，<strong>累计需求 3198 工日</strong>。每人最多工作 8 天，所以工人数 ≥ ⌈3198/8⌉ = <strong>400</strong>。
+          </div>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">⚙️</span> 关键数据 &amp; 技术亮点</h3>
+          <div class="metric-row">
+            <div class="metric">
+              <div class="metric-value">400</div>
+              <div class="metric-label">最少工人数（严格证明）</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">3198</div>
+              <div class="metric-label">最优总工日</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">6,000</div>
+              <div class="metric-label">聚合模型变量</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">39.9<span style="font-size:14px">万</span></div>
+              <div class="metric-label">Per-Worker 模型变量</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">0</div>
+              <div class="metric-label">需求缺口</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">时段覆盖</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">🎯</span> 我解决的难点</h3>
+          <ul>
+            <li><strong>变量爆炸：</strong>直接建模每工人每天每班次 → 1440 万变量，无法求解。→ 拆成"聚合 + Per-Worker"两步，把变量压到 16.2 万</li>
+            <li><strong>午间覆盖盲区：</strong>13:00-14:00 严格按"8-19 点 + 6 小时间隔"无法覆盖 → 提出"弹性时间"建议作为实用扩展</li>
+            <li><strong>最优性证明：</strong>不能只"找到一个解"，要"证明这是最优" → 引入三步法（下界 + 上限 + 可行性）</li>
+            <li><strong>贪心初始解：</strong>398 人 9 天 + 2 人 8 天的具体分配，用于生成完整排班表</li>
+          </ul>
+        </div>
+
+        <div class="detail-section fade-on-scroll">
+          <h3><span class="emoji">📁</span> 论文与代码</h3>
+          <ul>
+            <li><strong>完整论文</strong>（981KB，含 3 个子问题全解）</li>
+            <li><strong>代码仓库</strong>：聚合 ILP + Per-Worker 模型 + 贪心算法 + 最优性证明（Python + CBC 求解器）</li>
+            <li><strong>数据结果</strong>：个人排班表（400 人 × 10 天）+ 组别时段工人枚举表（1100 行）</li>
+            <li><strong>7 张图表</strong>：需求热力图、块覆盖模式、工作天数分布、求解流程图等</li>
+          </ul>
+          <div class="callout callout-warn">
+            <span class="callout-title">📝 论文结构</span>
+            本文 7 节：摘要 → 引言 → 数据描述 → 数学模型 → 求解结果 → 排班生成 → 实用建议 → 总结。
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a href="../" class="btn">返回作品</a>
+          <a href="../../#contact" class="btn btn-ghost">联系合作</a>
+        </div>
+      </main>
+
+      <aside class="detail-sidebar">
+        <div class="sidebar-card featured-card">
+          <h3>项目速览</h3>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">赛事</span>
+            <span class="sidebar-data-value">东北三省数模</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">奖项</span>
+            <span class="sidebar-data-value">🏆 省一等奖</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">题目</span>
+            <span class="sidebar-data-value">B 题</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">我的贡献</span>
+            <span class="sidebar-data-value">全部建模 + 代码</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>三个子问题</h3>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">Q1 固定组别</span>
+            <span class="sidebar-data-value accent">417 人</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">Q2 允许换组</span>
+            <span class="sidebar-data-value accent">406 人</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">Q2 间隔约束</span>
+            <span class="sidebar-data-value accent">506 人</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">Q3 弹性排班</span>
+            <span class="sidebar-data-value accent">400 人 ↓</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>模型规模</h3>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">聚合 ILP 变量</span>
+            <span class="sidebar-data-value accent">6,000</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">聚合约束</span>
+            <span class="sidebar-data-value accent">1,100</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">Per-Worker 变量</span>
+            <span class="sidebar-data-value accent">16.2 万</span>
+          </div>
+          <div class="sidebar-data">
+            <span class="sidebar-data-label">8 天工作模式</span>
+            <span class="sidebar-data-value accent">45 种</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>技术栈</h3>
+          <div class="tag-stack">
+            <span>Python</span>
+            <span>整数规划</span>
+            <span>CBC 求解器</span>
+            <span>贪心算法</span>
+            <span>数学证明</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 缪毅翔 · All rights reserved</div>
+      <div>建于锦州 · 跑在阿里云</div>
+      <div><a href="mailto:3446482129@qq.com" style="margin-right:12px;">邮件</a><a href="#">GitHub</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

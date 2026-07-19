@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我 | 缪毅翔</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../" class="nav-logo">缪毅翔</a>
+    <ul class="nav-links">
+      <li><a href="../">首页</a></li>
+      <li><a href="../projects/">作品</a></li>
+      <li><a href="./">关于</a></li>
+      <li><a href="../#contact">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">关于我</h2>
+    <p class="section-subtitle">辽宁理工 · 大一 · 找 AI 应用开发实习</p>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>我是 <strong>缪毅翔</strong>，2007 年出生，辽宁理工学院计算机科学与技术专业大一在读，所在地辽宁锦州。</p>
+        <p>目前主修<strong>高等数学</strong>与<strong>线性代数</strong>，C 语言刚入门。从大一下学期开始接触 Python 和 AI 工具，靠着 AI 协作 + 自己设计架构，做了几个真实落地的项目。</p>
+        <p>大一时主导了 <strong>大学生就业匹配平台</strong>（v2 仍在迭代）从架构设计、后端开发到阿里云部署的全流程，三端上线、Web + 小程序 + Android App 都能跑。同期拿了 <strong>东北三省数学建模省一等奖</strong>，作为组长独立完成全部建模与代码实现，组员仅负责论文撰写。</p>
+        <p>开发上，我更倾向 <strong>"用 AI 协作、靠判断力"</strong>——架构、接口、数据库、部署这些决策性工作由我独立负责，AI 帮我提速。这是我目前的开发方式，也是当下趋势。</p>
+        <p>正在补 <strong>RAG</strong> 和 <strong>Agent</strong> 方向，准备冲刺一下 AI 应用开发实习岗。<strong>7 月中可到岗，可持续至 10 月 1 日前</strong>，期望地点深圳 / 上海 / 北京，可接受出差。</p>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num">2</div>
+          <div class="stat-label">已落地项目</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">省一</div>
+          <div class="stat-label">数学建模奖项</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">多端上线</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">2.5<span style="font-size:18px">月</span></div>
+          <div class="stat-label">可实习时长</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">7月</div>
+          <div class="stat-label">可到岗时间</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">6天</div>
+          <div class="stat-label">每周可到岗</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--bg-soft);">
+  <div class="container">
+    <h2 class="section-title">教育背景</h2>
+    <div style="margin-top:20px;">
+      <div style="padding: 24px; border: 2px solid var(--border); border-radius: 4px; background: var(--bg);">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 4px;">辽宁理工学院 · 计算机科学与技术 · 本科</h3>
+        <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 12px;">2024.09 至今</p>
+        <p style="font-size: 14px; color: var(--text-secondary);">主修课程：高等数学、线性代数</p>
+        <p style="margin-top: 12px; padding-top: 12px; border-top: 1.5px dashed var(--border); color: #b91c1c; font-weight: 600;">
+          🏆 荣誉奖项：东北三省数学建模竞赛 · 省一等奖（2025，组长）
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 缪毅翔 · All rights reserved</div>
+      <div>建于锦州 · 跑在阿里云</div>
+      <div><a href="mailto:3446482129@qq.com" style="margin-right:12px;">邮件</a><a href="#">GitHub</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.section-title, .about-text, .about-stats, .stat-card, h3, p').forEach(el => el.classList.add('fade-on-scroll'));
+document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
